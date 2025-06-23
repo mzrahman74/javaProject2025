@@ -79,10 +79,18 @@ public class arrayCollection {
       cars.add("Toyota");
 
       Iterator<String> it = cars.iterator();
-    System.out.println(it.next());
 
-    while(it.hasNext()) {
-      System.out.println(it.next());
-    }
+      do {
+          System.out.println(it.next());
+      } while (it.hasNext());
+  }
+  public static void method_seven() {
+      String [] array = { "Dog", "Cat", "Rabbit"};
+
+      // Create a modifiable list
+      List<String> list = new ArrayList<>(Arrays.asList(array));
+      list.add("Hamster");
+      list.remove("Cat");
+    System.out.println(list);
   }
 }

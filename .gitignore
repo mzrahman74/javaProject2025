@@ -11,7 +11,8 @@ target/
 *.iws
 *.iml
 *.ipr
-
+.mvn
+.idea
 ### Eclipse ###
 .apt_generated
 .classpath
@@ -20,7 +21,7 @@ target/
 .settings
 .springBeans
 .sts4-cache
-.idea
+
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
