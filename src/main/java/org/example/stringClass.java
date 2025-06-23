@@ -21,9 +21,21 @@ public class stringClass {
         String txt = "Hello\nWorld";
     System.out.println(txt);
     }
+    public static void method_06() {
+        String txt = "Hello\rWorld";
+        System.out.println(txt);
+    }
+
+
     public static void method_05() {
         Scanner sc = new Scanner(System.in);
     System.out.println("Please enter string:\r");
     String txt = sc.nextLine();
+    }
+    public static void method_07() {
+        String words = "One Two Three Four";
+        int countWords = words.split("\\s").length;
+        int characters = words.chars().sum();
+    System.out.println(characters);
     }
 }
