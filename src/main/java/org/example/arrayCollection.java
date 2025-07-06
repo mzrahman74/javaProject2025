@@ -93,4 +93,19 @@ public class arrayCollection {
       list.remove("Cat");
     System.out.println(list);
   }
+  public static void method_eight() {
+      HashSet<Integer> numbers = new HashSet<>();
+      numbers.add(5);
+      numbers.add(10);
+      numbers.add(6);
+      numbers.add(3);
+
+      for (int i=0; i<=10; i++) {
+         if(numbers.contains(i)) {
+        System.out.println(i + " was found in teh set.");
+         } else {
+        System.out.println(i + " was not found in the set.");
+         }
+      }
+  }
 }
