@@ -7,6 +7,8 @@ sort an array
 
 import java.text.DecimalFormat;
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.OptionalInt;
 
 public class numberArray {
     public static void method_01() {
@@ -69,5 +71,34 @@ public class numberArray {
             }
         }
     System.out.println("The highest number in the array is: " + highest);
+  }
+  public static void method_08() {
+        int [] arrays = {2, 5, 100, 200, 3, 78};
+        int lowest = arrays[0];
+
+        for ( int i: arrays) {
+            if (lowest < i) {
+                lowest = i;
+            }
+        }
+        System.out.println("The lowest number in the array is: " + lowest);
+  }
+  public static void method_09() {
+        int [] arr = { 10, 12, 11, 5 , 6};
+        int secondHighest = Arrays.stream(arr).boxed().sorted(Comparator.reverseOrder()).skip(1).findFirst().get();
+    System.out.println(secondHighest);
+  }
+  public static void method_10() {
+        int[] numbers = {10, 5, 12, 7, 2 };
+        OptionalInt lowestNumberOptional = Arrays.stream(numbers).min();
+        if(lowestNumberOptional.isPresent()) {
+            int lowestNumber = lowestNumberOptional.getAsInt();
+      System.out.println("The lowest number is: " + lowestNumber);
+        } else {
+      System.out.println("The array is empty");
+        }
+  }
+  public static void main(String[] args){
+      method_10();
   }
 }
