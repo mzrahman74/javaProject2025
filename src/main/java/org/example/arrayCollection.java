@@ -1,12 +1,13 @@
 package org.example;
 
 import java.util.*;
+import java.util.function.Consumer;
 
 public class arrayCollection {
-  public static void method_One() {
+  public static void method_one() {
     ArrayList<String> cars = new ArrayList<>();
     cars.add("Volvo");
-    cars.add("BMW");
+    cars.add("Bmw");
     cars.add("Ford");
     cars.add("Nissan");
 
@@ -47,9 +48,9 @@ public class arrayCollection {
   }
   public static void method_four() {
       HashMap<String, String> capitalCities = new HashMap<>();
-      capitalCities.put("England", "London");
       capitalCities.put("Dhaka", "Bangladesh");
-      capitalCities.put("Dhillon", "India");
+      capitalCities.put("England", "London");
+      capitalCities.put("Delhi", "India");
       System.out.println(capitalCities);
     System.out.println(capitalCities.get("England"));
     System.out.println(capitalCities.size());
@@ -93,4 +94,59 @@ public class arrayCollection {
       list.remove("Cat");
     System.out.println(list);
   }
+  public static void method_eight() {
+      HashSet<Integer> numbers = new HashSet<>();
+      numbers.add(5);
+      numbers.add(10);
+      numbers.add(6);
+      numbers.add(3);
+
+      for (int i=0; i<=10; i++) {
+         if(numbers.contains(i)) {
+        System.out.println(i + " was found in the set.");
+         } else {
+        System.out.println(i + " was not found in the set.");
+         }
+      }
+  }
+  public static void method_nine() {
+      TreeSet<String> names = new TreeSet<>();
+      names.add("Rahman");
+      names.add("Nuhaa");
+      names.add("Amina");
+      names.add("Rahman");
+      names.add("Mike");
+      names.ceiling("Abdul");
+      names.add("Naushin");
+      names.add("Biplob");
+
+      for (String i : names) {
+      System.out.println(i);
+      }
+
+
+  }
+  public static void method_ten() {
+      ArrayList<Integer> numbers = new ArrayList<>();
+      numbers.add(5);
+      numbers.add(10);
+      numbers.add(12);
+      Consumer<Integer> method = System.out::println;
+      numbers.forEach(method);
+  }
+  interface StringFunction {
+      String run(String str);
+  }
+
+
+  public static void main(String[] args){
+      StringFunction exclaim = (s) -> s + "!";
+      StringFunction ask = (s) -> s + "?";
+      printFormatted("Hello", exclaim);
+      printFormatted("Hello", ask);
+     }
+     public static void printFormatted(String str, StringFunction format) {
+      String result = format.run(str);
+    System.out.println(result);
+     }
 }

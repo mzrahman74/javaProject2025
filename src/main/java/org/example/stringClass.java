@@ -38,4 +38,19 @@ public class stringClass {
         int characters = words.chars().sum();
     System.out.println(characters);
     }
+    public static void method_08() {
+        String myStr = "Hello";
+        char[] myArray = myStr.toCharArray();
+    System.out.println(myArray[0]);
+
+    for (char i: myArray) {
+      System.out.println(i);
+    }
+    for ( int j = 0; j< myArray.length; j++) {
+      System.out.println( j + ":" + myArray[j]);
+    }
+    }
+    public static void main(String[] args){
+        method_08();
+    }
 }
