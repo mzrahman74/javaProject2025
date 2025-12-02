@@ -51,6 +51,17 @@ public class stringClass {
     }
     }
     public static void main(String[] args){
-        method_08();
+        method_09();
+    }
+    public static void method_09() {
+        String testName = "Yusuf Rahman";
+        char[] myArray = testName.toCharArray();
+    System.out.println(myArray[0]);
+    for (char i: myArray) {
+      System.out.println(i);
+    }
+    for (int j =0; j< myArray.length; j++) {
+      System.out.println(j + ":" + myArray[j]);
+    }
     }
 }

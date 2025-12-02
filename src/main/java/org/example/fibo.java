@@ -13,6 +13,16 @@ public class fibo {
     }
     public static void main(String[] args){
 
-        fibonacci(10);
+
+        method_01(20);
+    }
+    public static void method_01(int n) {
+        int n1=2, n2=3;
+        for (int i=0; i<n; i++) {
+      System.out.println(n1 + " ");
+      int n3= n2 + n1;
+      n1 = n2;
+      n2=n3;
+        }
     }
 }

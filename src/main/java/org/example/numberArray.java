@@ -99,6 +99,43 @@ public class numberArray {
         }
   }
   public static void main(String[] args){
-      method_10();
+      method_14();
+  }
+  public static void method_11() {
+        int [] numbers = {500, 600, 700, 10, 20, 1, 2};
+    Arrays.stream(numbers).sorted().forEach(s -> System.out.println(s));
+  }
+  public static void method_12() {
+       String str = "Yusuf";
+       char[] arr = str.toCharArray();
+
+       for(char j: arr) {
+      System.out.println(j);
+       }
+       for (int j=0; j < arr.length; j++) {
+      System.out.println(j + ":" + arr[j]);
+       }
+  }
+
+  public static void method_13() {
+    int[] numbers = {300, 400, 500, 600};
+    int highest = numbers[0];
+
+    for (int number : numbers) {
+      if (highest < number) {
+        highest = number;
+      }
+    }
+    System.out.println("The highest number in the array is: " + highest);
+  }
+  public static void method_14() {
+        int [] ages = {200, 55, 65, 75, 100};
+        int lowestAge = ages[0];
+        for (int age: ages){
+            if (lowestAge > age) {
+                lowestAge = age;
+            }
+        }
+      System.out.println("The lowest age in the array is: " + lowestAge);
   }
 }

@@ -85,6 +85,20 @@ public class arrayCollection {
           System.out.println(it.next());
       } while (it.hasNext());
   }
+
+  public static void method_thirteen() {
+      ArrayList<String> trees = new ArrayList<>();
+      trees.add("Mango");
+      trees.add("Banana");
+      trees.add("Orange");
+
+      Iterator<String> tree = trees.iterator();
+
+      do {
+          System.out.println(tree.next());
+      } while (tree.hasNext());
+  }
+
   public static void method_seven() {
       String [] array = { "Dog", "Cat", "Rabbit"};
 
@@ -144,9 +158,42 @@ public class arrayCollection {
       StringFunction ask = (s) -> s + "?";
       printFormatted("Hello", exclaim);
       printFormatted("Hello", ask);
+      method_thirteen();
      }
      public static void printFormatted(String str, StringFunction format) {
       String result = format.run(str);
     System.out.println(result);
+     }
+     public static void method_eleven() {
+      HashSet<String> names = new HashSet<>();
+      names.add("Hassan");
+      names.add("Nuhaa");
+
+      for (String j : names) {
+          if(names.contains(j)) {
+        System.out.println("found");
+          } else {
+        System.out.println("not found");
+          }
+      }
+      String test = "Isha";
+      if(names.contains(test)){
+      System.out.println("found");
+      } else {
+      System.out.println("not found");
+      }
+     }
+     public static void method_twelve() {
+      HashSet<Integer> numbers = new HashSet<>();
+      numbers.add (100);
+      numbers.add(200);
+      numbers.add(300);
+      for (Integer i : numbers) {
+         if (numbers.contains(400)) {
+        System.out.println("number found ");
+         } else {
+        System.out.println("not found ");
+         }
+      }
      }
 }

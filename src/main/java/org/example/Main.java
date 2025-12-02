@@ -22,7 +22,9 @@ public class Main {
     vehicle.honk();
     myCar.honk();
     myToyota.honk();
-    reverseClass.method_06();
+    reverseClass.method_10();
+    Vehicle myHonda = new Honda();
+    myHonda.honk();
 
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.

@@ -21,4 +21,12 @@ class Toyota extends  Vehicle {
         super.honk();
     System.out.println(" boo boo");
     }
+
+}
+
+class Honda extends Vehicle {
+    @Override
+    public void honk() {
+    System.out.println("honda honda");
+    }
 }
