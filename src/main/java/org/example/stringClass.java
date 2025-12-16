@@ -51,7 +51,7 @@ public class stringClass {
     }
     }
     public static void main(String[] args){
-        method_09();
+        method_10();
     }
     public static void method_09() {
         String testName = "Yusuf Rahman";
@@ -62,6 +62,17 @@ public class stringClass {
     }
     for (int j =0; j< myArray.length; j++) {
       System.out.println(j + ":" + myArray[j]);
+    }
+    }
+    public static void method_10() {
+        String  names = "Technology";
+        char [] arrayNames = names.toCharArray();
+    System.out.println(arrayNames[0]);
+    for(char i : arrayNames) {
+      System.out.println(i);
+    }
+    for(int j=0; j<arrayNames.length; j++) {
+      System.out.println(j + ":" + arrayNames[j]);
     }
     }
 }
