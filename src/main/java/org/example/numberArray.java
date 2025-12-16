@@ -99,7 +99,7 @@ public class numberArray {
         }
   }
   public static void main(String[] args){
-      method_14();
+      method_15();
   }
   public static void method_11() {
         int [] numbers = {500, 600, 700, 10, 20, 1, 2};
@@ -137,5 +137,19 @@ public class numberArray {
             }
         }
       System.out.println("The lowest age in the array is: " + lowestAge);
+  }
+
+  public static void method_15() {
+        int[] numbers = {300, 45, 55, 65, 100};
+        int lowestNumber = numbers[0];
+
+        for(int number: numbers) {
+            if (lowestNumber > number) {
+                lowestNumber = number;
+            }
+        }
+        System.out.println("The lowest number in the array is: " + lowestNumber);
+
+
   }
 }
