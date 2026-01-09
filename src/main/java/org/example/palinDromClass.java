@@ -6,7 +6,7 @@ public class palinDromClass {
     public static void main(String[] args){
      System.out.println("Mohamamd" + " is palindrome: "  + method_one("Mohammad"));
     System.out.println( method_two("mohammad"));
-    System.out.println(method_four());
+    System.out.println(method_five("A man, a plan, a canal-panama"));
 
     }
 
@@ -58,5 +58,10 @@ public class palinDromClass {
     String normalized = str.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
     String reverse = new StringBuilder(normalized).reverse().toString();
     return normalized.equals(reverse);
+  }
+  public static boolean method_five(String s) {
+     String normalized  = s.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+     String reverse = new StringBuilder(normalized).reverse().toString();
+     return normalized.equals(reverse);
   }
 }
