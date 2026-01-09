@@ -58,7 +58,7 @@ public class JsonClass {
          }
     }
     /*
-    input string characters occurance
+    input string characters occurrence
      */
     public static void method_two() {
         Scanner scanner = new Scanner(System.in);
