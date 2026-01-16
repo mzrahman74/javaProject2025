@@ -101,7 +101,7 @@ public class numberArray {
         }
   }
   public static void main(String[] args){
-      method_17();
+      method_19();
   }
   public static void method_11() {
         int [] numbers = {500, 600, 700, 10, 20, 1, 2};
@@ -170,6 +170,21 @@ public class numberArray {
         int [] numbers = { 100, 300, 400, 0, 4, 500, 600};
       int second =  stream(numbers).boxed().sorted().skip(1).findFirst().get();
       System.out.println(second);
+  }
+/*
+find the highest number from the arrays
+ */
+  public static void method_18() {
+        int [] arraysNumber = { 300, 5000, 500, 700, 100, 900, 1000};
+        int highestNUmber = stream(arraysNumber).boxed().max(Comparator.naturalOrder()).get();
+    System.out.println("Highest number from the array: " + highestNUmber);
+  }
+  /* find the lowest number from the arrays
+  */
+  public static void method_19() {
+      int [] numberArray = { 6000, 1000, 100, 200, 500};
+      int lowestNumber = stream(numberArray).boxed().min(Comparator.naturalOrder()).get();
+    System.out.println("Lowest number from the array: " + lowestNumber);
   }
 
 }
