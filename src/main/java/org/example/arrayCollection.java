@@ -159,7 +159,8 @@ public class arrayCollection {
 //    method_eleven();
 //    method_twelve();
 //    method_thirteen();
-    method_fifteen();
+ //   method_fifteen();
+    method_sixteen();
   }
 
   public static void printFormatted(String str, StringFunction format) {
@@ -249,5 +250,23 @@ public class arrayCollection {
         System.out.println("not found");
       }
     }
+  }
+  public static void method_sixteen() {
+    HashSet<Integer> numbers = new HashSet<>();
+    numbers.add(100);
+    numbers.add(200);
+    numbers.add(300);
+    numbers.add(50);
+
+    for (Integer i: numbers) {
+      if (i.equals(300)) {
+        System.out.println("number found " + i);
+      } else {
+        System.out.println("not found");
+      }
+    }
+
+
+
   }
 }
