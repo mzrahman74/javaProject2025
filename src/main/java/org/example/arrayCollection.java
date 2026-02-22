@@ -160,7 +160,7 @@ public class arrayCollection {
 //    method_twelve();
 //    method_thirteen();
  //   method_fifteen();
-    method_sixteen();
+    method_nineteen();
   }
 
   public static void printFormatted(String str, StringFunction format) {
@@ -265,8 +265,45 @@ public class arrayCollection {
         System.out.println("not found");
       }
     }
+  }
+  public static void method_seventeen() {
+    ArrayList<Integer> numbers = new ArrayList<>();
+    numbers.add(500);
+    numbers. add(100);
+    numbers.add(300);
+    numbers.add(50);
+    numbers.add(25);
 
+    Iterator<Integer> num = numbers.iterator();
+    while(num.hasNext()) {
+      if(num.next().equals(100)) {
+        System.out.println("Found");
+      } else {
+        System.out.println("Not found");
+      }
+    }
+  }
+  public static void method_eighteen() {
+    ArrayList<Integer> lists = new ArrayList<>();
+    lists.add(50);
+    lists.add(100);
+    lists.add(500);
+    lists.add(500);
 
+    for(Integer list : lists) {
+      if(list == 50) {
+        System.out.println("Found: " + list);
+        break;
+      }
+    }
+  }
+  public static void method_nineteen() {
+    ArrayList<String> names = new ArrayList<>();
+    names.add("Nuhaa");
+    names.add("Naushin");
+    names.add("Yusuf");
+    names.add("Nusrat");
 
+    names.stream().filter(n -> Objects.equals(n, "Naushin")).findFirst().ifPresent(n -> System.out.println("Found: " + n));
   }
 }
