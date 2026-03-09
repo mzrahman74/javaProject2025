@@ -160,7 +160,7 @@ public class arrayCollection {
 //    method_twelve();
 //    method_thirteen();
  //   method_fifteen();
-    method_nineteen();
+    method_twenty();
   }
 
   public static void printFormatted(String str, StringFunction format) {
@@ -305,5 +305,17 @@ public class arrayCollection {
     names.add("Nusrat");
 
     names.stream().filter(n -> Objects.equals(n, "Naushin")).findFirst().ifPresent(n -> System.out.println("Found: " + n));
+  }
+  public static void method_twenty() {
+    ArrayList<Integer> numbers = new ArrayList<>();
+    numbers.add(100);
+    numbers.add(200);
+    numbers.add(50);
+    numbers.add(5);
+    numbers.add(650);
+    numbers.stream()
+        .filter(n -> Objects.equals(n, 5))
+        .findFirst()
+        .ifPresent(n -> System.out.println("Found: " + n));
   }
 }
