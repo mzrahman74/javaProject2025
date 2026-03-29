@@ -101,7 +101,7 @@ public class numberArray {
         }
   }
   public static void main(String[] args){
-      method_23();
+      method_24();
   }
   public static void method_11() {
         int [] numbers = {500, 600, 700, 10, 20, 1, 2};
@@ -217,5 +217,13 @@ public static void method_23() {
     int [] arrays = {100, 200, 300, 500, 50, 4, 2000};
     int first_highest_number = stream(arrays).boxed().sorted(Comparator.reverseOrder()).findFirst().get();
     System.out.println(first_highest_number);
+}
+/*
+find the second-highest number in the array
+ */
+public static void method_24() {
+    int [] numbers = {300, 400, 500, 750};
+    int second_highest_number = stream(numbers).boxed().sorted(Comparator.reverseOrder()).skip(1).findFirst().get();
+    System.out.println(second_highest_number);
 }
 }
