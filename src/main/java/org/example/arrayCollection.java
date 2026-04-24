@@ -160,7 +160,7 @@ public class arrayCollection {
 //    method_twelve();
 //    method_thirteen();
  //   method_fifteen();
-    method_twenty();
+    method_twenty_one();
   }
 
   public static void printFormatted(String str, StringFunction format) {
@@ -317,5 +317,20 @@ public class arrayCollection {
         .filter(n -> Objects.equals(n, 5))
         .findFirst()
         .ifPresent(n -> System.out.println("Found: " + n));
+  }
+  /*
+  find the desire job tile from the list
+   */
+  public static void method_twenty_one() {
+    ArrayList<String> job_title = new ArrayList<>();
+    job_title.add("Engineer");
+    job_title.add("Doctor");
+    job_title.add("Advisor");
+    job_title.add("Clark");
+
+    job_title.stream()
+        .filter(n -> n.equals("Engineer"))
+        .findFirst()
+        .ifPresent(System.out::println);
   }
 }
