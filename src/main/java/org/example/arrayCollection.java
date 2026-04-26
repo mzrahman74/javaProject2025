@@ -319,7 +319,7 @@ public class arrayCollection {
         .ifPresent(n -> System.out.println("Found: " + n));
   }
   /*
-  find the desire job tile from the list
+  find the desire job title from the list
    */
   public static void method_twenty_one() {
     ArrayList<String> job_title = new ArrayList<>();
