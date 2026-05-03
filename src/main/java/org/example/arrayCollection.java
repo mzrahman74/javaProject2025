@@ -160,7 +160,7 @@ public class arrayCollection {
 //    method_twelve();
 //    method_thirteen();
  //   method_fifteen();
-    method_twenty_one();
+    method_twenty_two();
   }
 
   public static void printFormatted(String str, StringFunction format) {
@@ -332,5 +332,19 @@ public class arrayCollection {
         .filter(n -> n.equals("Engineer"))
         .findFirst()
         .ifPresent(System.out::println);
+  }
+  /*
+  find the desire car from the ist
+   */
+  public static void method_twenty_two() {
+    ArrayList<Object> car = new ArrayList<>();
+    car.add("Tesla");
+    car.add("Toyota");
+    car.add("Honda");
+    car.add("Chevy");
+    car.add("Ford");
+    car.add(911);
+
+    car.stream().filter(n -> n.equals(911)).findFirst().ifPresent(System.out::println);
   }
 }
