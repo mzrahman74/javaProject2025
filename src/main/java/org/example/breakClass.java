@@ -12,7 +12,19 @@ public class breakClass {
       System.out.println(i);
        }
     }
+    public static void method_two() {
+        for (int j=0; j<100; j++) {
+            if(j==50){
+                continue;
+            }
+            if(j==75) {
+                break;
+            }
+      System.out.println(j);
+        }
+    }
+
     public static void main(String[] args){
-        method_one();
+        method_two();
     }
 }
