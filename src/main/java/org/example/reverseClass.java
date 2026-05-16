@@ -105,7 +105,7 @@ public class reverseClass {
     System.out.println(reversed);
   }
   public static void main(String[] args){
-    method_13();
+    method_14();
   }
   public static void method_12() {
     Scanner scanner = new Scanner(System.in);
@@ -130,5 +130,13 @@ public class reverseClass {
       reversed = str.charAt(i) + reversed;
     }
     System.out.println("reversed string: " + reversed);
+  }
+  public static void method_14() {
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Please enter the string: \r");
+    String str = scanner.nextLine();
+    String normalized = str.replaceAll("[^a-zA-Z0-9]", "");
+    String reverse = new StringBuilder(normalized).reverse().toString();
+    System.out.println(reverse);
   }
 }
