@@ -26,7 +26,17 @@ public class mathClass {
     System.out.println("Random number: " + number);
     System.out.println("Random names: " + names[index]);
     }
+    /*
+    display random toyota car with random number
+     */
+    public static void method_04(){
+        int number = (int) (Math.random() * 4 + 1);
+        String [] cars = {"Toyota Camry", " Toyota Rav4", " Toyota BZ", "Toyota Corolla", " Toyota Prius"};
+        int index = (int)  (Math.random() * cars .length);
+    System.out.println("Random number: " + number);
+    System.out.println("Random car: " + cars[index]);
+    }
     public static void main(String[] args){
-        method_03();
+        method_04();
     }
 }
