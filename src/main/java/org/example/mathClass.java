@@ -1,9 +1,5 @@
 package org.example;
 
-import java.util.Arrays;
-import java.util.Objects;
-import java.util.Random;
-
 import static java.util.Arrays.stream;
 
 public class mathClass {
@@ -45,7 +41,7 @@ public class mathClass {
   }
 
   /*
-  from service_lane scan lexus gx550 and need to display more money
+  From service_lane scan lexus gx550 and need to display more money
    */
   public static void method_05() {
     int number = (int) (Math.random() * 8 + 1);
@@ -53,7 +49,7 @@ public class mathClass {
       "Toyota Camry",
       "Toyota Rav4",
       "Ford Escape",
-      "Nissan Altima",
+      "Toyota Highlander",
       "Chevy Malibu",
       "Lexus GX550",
       "Toyota BZ",
@@ -61,7 +57,6 @@ public class mathClass {
       "Toyota Prius"
     };
     System.out.println("Car number: " + number);
-    int index = (int)(Math.random() * service_lane_cars.length);
 
     stream(service_lane_cars)
         .filter(car -> car.equals("Lexus GX550"))
@@ -69,7 +64,9 @@ public class mathClass {
         .ifPresent(
             c ->
                 System.out.println(
-                    "The " + c + " owner has to pay $129 plus tax for an oil change." ));
+                    "The "
+                        + c
+                        + " owner has to pay $129 plus tax for an oil change and rotation."));
   }
 
   public static void main(String[] args) {
