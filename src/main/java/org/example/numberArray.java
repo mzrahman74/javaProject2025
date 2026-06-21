@@ -101,7 +101,7 @@ public class numberArray {
         }
   }
   public static void main(String[] args){
-      method_24();
+      method_25();
   }
   public static void method_11() {
         int [] numbers = {500, 600, 700, 10, 20, 1, 2};
@@ -226,4 +226,14 @@ public static void method_24() {
     int second_highest_number = stream(numbers).boxed().sorted(Comparator.reverseOrder()).skip(1).findFirst().get();
     System.out.println(second_highest_number);
 }
+
+  /*
+  find the 4th highes number in the array
+   */
+  public static void method_25() {
+    int[] numbers = {100, 500, 600, 450, 320, 120, 20, 1, 70};
+    int fourth_highest_number =
+        stream(numbers).boxed().sorted(Comparator.reverseOrder()).skip(3).findFirst().get();
+    System.out.println(fourth_highest_number);
+  }
 }

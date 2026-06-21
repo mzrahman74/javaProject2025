@@ -160,7 +160,7 @@ public class arrayCollection {
 //    method_twelve();
 //    method_thirteen();
  //   method_fifteen();
-    method_twenty_three();
+    method_twenty_five();
   }
 
   public static void printFormatted(String str, StringFunction format) {
@@ -358,5 +358,34 @@ public class arrayCollection {
     car.add("Toyota EV");
 
     car.stream().filter(x -> x.equals("Toyota EV")).findFirst().ifPresent(System.out::println);
+  }
+  /*
+  sort the names from the list ascending
+   */
+  public static void method_twenty_four() {
+    ArrayList<String> names = new ArrayList<>();
+    names.add("Nusrat");
+    names.add("Naushin");
+    names.add("Nuhaa");
+    names.add("Yusuf");
+    names.add("Mohammad");
+
+    names.stream().sorted().forEach(System.out::println);
+  }
+  /*
+  sort the names from the list descending order
+   */
+  public static void method_twenty_five() {
+    ArrayList<String> names = new ArrayList<>();
+    names.add("Nusrat");
+    names.add("Naushin");
+    names.add("Nuhaa");
+    names.add("Yusuf");
+    names.add("Mohammad");
+    names.add("Rabeya");
+
+    names.stream()
+        .sorted(Collections.reverseOrder())
+        .forEach(System.out::println);
   }
 }
