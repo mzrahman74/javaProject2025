@@ -160,7 +160,7 @@ public class arrayCollection {
 //    method_twelve();
 //    method_thirteen();
  //   method_fifteen();
-    method_twenty_five();
+    method_twenty_six();
   }
 
   public static void printFormatted(String str, StringFunction format) {
@@ -387,5 +387,9 @@ public class arrayCollection {
     names.stream()
         .sorted(Collections.reverseOrder())
         .forEach(System.out::println);
+  }
+  public static void method_twenty_six() {
+   List<String> cars = Arrays.asList("Toyota", "Honda", "Kia", "Ford", "Audi", "Tesla");
+    cars.stream().sorted().forEach(System.out::println);
   }
 }
