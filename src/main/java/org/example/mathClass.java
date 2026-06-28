@@ -68,8 +68,26 @@ public class mathClass {
                         + c
                         + " owner has to pay $129 plus tax for an oil change and rotation."));
   }
+  public static void method_06() {
+    int numbers = (int) (Math.random() * 9 + 1);
+    String[] service_lane_cars = {
+            "Toyota Corolla",
+            "Toyota Camry",
+            "Toyota 4Runner",
+            "Toyota Highlander",
+            "Nissan Rouge",
+            "Toyota BZ",
+            "Toyota Prius",
+            "Toyota Lexus"
+    };
+    System.out.println("Cone number: " + numbers);
+    stream(service_lane_cars)
+        .filter(car -> car.equals("Nissan Rouge"))
+        .findFirst()
+        .ifPresent(car -> System.out.println("It's " + car + " Heads up need to crete RO with OFCS code due to not Toyota."));
+  }
 
   public static void main(String[] args) {
-    method_05();
+    method_06();
   }
 }
