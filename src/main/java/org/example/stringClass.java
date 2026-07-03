@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class stringClass {
     public static void method_01() {
@@ -51,7 +52,7 @@ public class stringClass {
     }
     }
     public static void main(String[] args){
-        method_10();
+        method_11();
     }
     public static void method_09() {
         String testName = "Yusuf Rahman";
@@ -74,5 +75,14 @@ public class stringClass {
     for(int j=0; j<arrayNames.length; j++) {
       System.out.println(j + ":" + arrayNames[j]);
     }
+    }
+    /*
+    print index and character with InStream
+     */
+    public static void method_11() {
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Please enter the string: ");
+    String str = scanner.nextLine();
+    IntStream.range(0, str.length()).forEach(s -> System.out.println("Index: " + s + ", Character " + str.charAt(s)));
     }
 }
