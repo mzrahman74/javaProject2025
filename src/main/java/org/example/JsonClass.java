@@ -14,6 +14,9 @@ Write a Java program to print the number of occurrences of each character in the
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.stream.Collectors;
+
+import static java.awt.SystemColor.text;
 
 public class JsonClass {
     public static void main(String[] args) {
@@ -26,7 +29,7 @@ public class JsonClass {
             System.out.println("does not match");
         }
         assertEquals(jsonString1, jsonString2); //suggested use assertEquals from Then(). asserThat().statusCode().response().body()
-        method_two();
+        method_three();
     }
 
     private static void assertEquals(String jsonString1, String jsonString2) {
@@ -74,4 +77,15 @@ public class JsonClass {
       System.out.println(entry.getKey() + ":" + entry.getValue());
         }
   }
+  /*
+  input string count with stream
+   */
+    public static void method_three() {
+        Scanner scanner = new Scanner(System.in);
+    System.out.println("Please enter the string: \r");
+    String str = scanner.nextLine();
+    Map<Character, Long> counts = str.chars()
+            .mapToObj(c-> (char) c).collect(Collectors.groupingBy(c ->c, Collectors.counting()));
+    System.out.println(counts);
+    }
 }
