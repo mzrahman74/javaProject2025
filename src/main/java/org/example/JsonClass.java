@@ -1,41 +1,78 @@
 package org.example;
+
 /*
 Write a method to compare two JSON objects and return failures for the mismatches
 
  */
-
-/*
-Write a Java program to print the number of occurrences of each character in the given string.
-
-"TECHNOLOGY"
-
- */
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
-import static java.awt.SystemColor.text;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class JsonClass {
-    public static void main(String[] args) {
-        String   jsonString1 = "{\"name\":\"John Doe\",\"age\":30,\"city\":\"New York\"}";
-        String jsonString2 = "{\"age\":30,\"city\":\"New York\",\"name\":\"John Doe\"}";
+  public static void main(String[] args) throws JsonProcessingException {
+    compareJson();
+  }
 
-        if (jsonString1 == jsonString2) {
-            System.out.println("match");
-        } else {
-            System.out.println("does not match");
-        }
-        assertEquals(jsonString1, jsonString2); //suggested use assertEquals from Then(). asserThat().statusCode().response().body()
-        method_three();
+  public static void compareJson() throws JsonProcessingException {
+    String jsonString1 = "{\"Name\":\"John Doe\",\"Age\":30,\"City\":\"New York\"}";
+    String jsonString2 =
+        "{\"Age\":35,\"City\":\"Dallas\",\"Name\":\"Jon Smith\", \"Country\":\"USA\"}";
+
+    ObjectMapper mapper = new ObjectMapper();
+
+    JsonNode node1 = mapper.readTree(jsonString1);
+    JsonNode node2 = mapper.readTree(jsonString2);
+
+    List<String> failures = new ArrayList<>();
+    compareNodes("", node1, node2, failures);
+    failures.forEach(System.out::println);
+  }
+
+  private static void compareNodes(
+      String path, JsonNode node1, JsonNode node2, List<String> failures) {
+
+    // check missing fields
+    Iterator<String> fields = node1.fieldNames();
+
+    while (fields.hasNext()) {
+      String field = fields.next();
+      String currentPath = path.isEmpty() ? field : path + "." + field;
+
+      if (!node2.has(field)) {
+        failures.add("Missing field: " + currentPath);
+        continue;
+      }
+      JsonNode value1 = node1.get(field);
+      JsonNode value2 = node2.get(field);
+
+      if (value1.isObject() && value2.isObject()) {
+        compareNodes(currentPath, value1, value2, failures);
+      } else if (!value1.equals(value2)) {
+        failures.add("Mismatch at " + currentPath + " Expected: " + value1 + " Actual: " + value2);
+      }
     }
+    // check extra fields
+    Iterator<String> fields2 = node2.fieldNames();
 
-    private static void assertEquals(String jsonString1, String jsonString2) {
+    while (fields2.hasNext()) {
+      String field = fields2.next();
 
+      if (!node1.has(field)) {
+        String currentPath = path.isEmpty() ? field : path + "." + field;
+        failures.add("Unexpected field " + currentPath);
+      }
     }
-    public static void method() {
+  }
+    /*
+    Write a Java program to print the number of occurrences of each character in the given string.
+
+    "TECHNOLOGY"
+
+     */
+  public static void method() {
         String str = "TECHNOLOGY";
         int count = str.length();
         System.out.println(count);
@@ -47,8 +84,8 @@ public class JsonClass {
     }
     public static void method_one() {
         String input = "TECHNOLOGY";
-        String inpout1 = "technology";
-         input.equalsIgnoreCase(inpout1);
+        String input1 = "technology";
+         input.equalsIgnoreCase(input1);
          Map<Character, Integer> charCountMap = new HashMap<>();
 
          for (char c : input.toCharArray() ) {
