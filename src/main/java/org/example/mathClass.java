@@ -84,7 +84,7 @@ public class mathClass {
     stream(service_lane_cars)
         .filter(car -> car.equals("Nissan Rouge"))
         .findFirst()
-        .ifPresent(car -> System.out.println("It's " + car + " Heads up need to crete RO with OFCS code due to not Toyota."));
+        .ifPresent(car -> System.out.println("It's " + car + " Heads up need to create RO with OFCS code due to not Toyota."));
   }
 
   public static void main(String[] args) {
