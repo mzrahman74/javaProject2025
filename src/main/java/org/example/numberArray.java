@@ -5,6 +5,8 @@ convert string to array
 sort an array
  */
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -101,7 +103,7 @@ public class numberArray {
         }
   }
   public static void main(String[] args){
-      method_25();
+      method_26();
   }
   public static void method_11() {
         int [] numbers = {500, 600, 700, 10, 20, 1, 2};
@@ -228,7 +230,7 @@ public static void method_24() {
 }
 
   /*
-  find the 4th highes number in the array
+  find the 4th highest number in the array
    */
   public static void method_25() {
     int[] numbers = {100, 500, 600, 450, 320, 120, 20, 1, 70};
@@ -236,4 +238,13 @@ public static void method_24() {
         stream(numbers).boxed().sorted(Comparator.reverseOrder()).skip(3).findFirst().get();
     System.out.println(fourth_highest_number);
   }
+  /*
+  find the first highest number from the array
+   */
+    public static void method_26() {
+        int [] arrays = { 500, 900, 1000, 2, 1000000, 50000000, 7000};
+    int first_highest_number =
+        stream(arrays).boxed().max(Comparator.naturalOrder()).get();
+    System.out.println(first_highest_number);
+    }
 }
